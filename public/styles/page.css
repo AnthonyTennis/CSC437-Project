@@ -1,10 +1,6 @@
 body {
-    background-color: #121212;
+    background-color: var(--background-color);
     color: #E0E0E0;
-    font-family: 'Roboto', Helvetica, Arial, sans-serif;
-    display: grid;
-    gap: 20px;
-    padding: 20px;
 }
 
 header {
@@ -19,16 +15,11 @@ header {
 }
 
 a {
-    color: #BB86FC;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
+    color: var(--primary-color);
 }
 
 nav {
-    background-color: #2A2A2A; /* benday */
+    background-color: var(--benday-color);
     padding: 10px;
     display: flex;
 }
@@ -38,25 +29,21 @@ nav a {
 }
 
 article, section {
-    background-color: #242424;
+    background-color: var(--benday-color);
     margin: 10px;
     padding: 15px;
     border-radius: 5px;
 }
 
 h2, h3 {
-    color: #BB86FC;
-    font-family: 'Merriweather', 'Times New Roman', serif;
-    font-weight: 700;
+    color: var(--primary-color);
 }
 
 h1 {
-    color: #BB86FC;
-    font-family: 'Merriweather', 'Times New Roman', serif;
-    font-weight: 900
+    color: var(--primary-color);
 }
 
 i.fa {
-    color: #BB86FC;
+    color: var(--primary-color);
 }
 
