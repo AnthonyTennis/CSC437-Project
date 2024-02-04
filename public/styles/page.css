@@ -2,6 +2,9 @@ body {
     background-color: #121212;
     color: #E0E0E0;
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    display: grid;
+    gap: 20px;
+    padding: 20px;
 }
 
 header {
@@ -9,6 +12,10 @@ header {
     color: #FFFFFF;
     padding: 20px;
     text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
 a {
@@ -23,6 +30,11 @@ a:hover {
 nav {
     background-color: #2A2A2A; /* benday */
     padding: 10px;
+    display: flex;
+}
+
+nav a {
+    margin-right: 20px;
 }
 
 article, section {
