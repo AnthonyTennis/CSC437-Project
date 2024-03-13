@@ -47,3 +47,28 @@ i.fa {
     color: var(--primary-color);
 }
 
+user-panel {
+    display: block;
+    background-color: #1E1E1E;
+    color: var(--text-color); /* Assuming you have defined this in tokens.css */
+    padding: 10px;
+}
+
+user-panel a {
+    display: block;
+    color: var(--primary-color); /* Use your design tokens */
+    text-decoration: none;
+    padding: 8px;
+}
+
+user-panel a:hover {
+    background-color: var(--hover-background-color);
+}
+
+.sign-out {
+    border-top: 1px solid var(--border-color); /* Use your design tokens */
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+

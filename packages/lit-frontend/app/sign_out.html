@@ -11,24 +11,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="module" src="/src/drop-down.ts"></script>
 </head>
 <body>
     <header>
         <i class="fa fa-home fa-3x"></i>
-        <h1>Welcome to the Travel Concept Map</h1>
+        <h1>Signed Out</h1>
+        <drop-down >
+            Blaze
+            <user-panel
+              slot="menu"
+              avatar="/data/avatars/Blaze Pasquale.png">
+              <span slot="profile"><a href="traveler_profile.html">Profile</a></span>
+              <span slot="my_tours"><a href="my_tours.html">My Tours</a></span>
+              <span slot="sign_out"><a href="sign_out.html">Sign Out</a></span>
+            </user-panel>
+        </drop-down>
     </header>
-    <nav>
-        <h2>Concepts</h2>
-        <ul>
-            <li><a href="traveler_profile.html"><i class="fa fa-user"></i> Traveler Profile</a></li>
-            <li><a href="budget_details.html"><i class="fa fa-money"></i> Budget Details</a></li>
-            <li><a href="destination_details.html"><i class="fa fa-list"></i> Destination Details</a></li>
-            <li><a href="transportation_method.html"><i class="fa fa-globe"></i> Transportation Method</a></li>
-            <!-- Add additional links for other concept pages as they are created -->
-        </ul>
-    </nav>
-    <footer>
-        <p>Travel Concept Map Project</p>
-    </footer>
 </body>
 </html>
