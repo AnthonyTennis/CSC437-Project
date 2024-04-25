@@ -1,0 +1,74 @@
+body {
+    background-color: var(--background-color);
+    color: #E0E0E0;
+}
+
+header {
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--primary-color);
+}
+
+nav {
+    background-color: var(--benday-color);
+    padding: 10px;
+    display: flex;
+}
+
+nav a {
+    margin-right: 20px;
+}
+
+article, section {
+    background-color: var(--benday-color);
+    margin: 10px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+h2, h3 {
+    color: var(--primary-color);
+}
+
+h1 {
+    color: var(--primary-color);
+}
+
+i.fa {
+    color: var(--primary-color);
+}
+
+user-panel {
+    display: block;
+    background-color: #1E1E1E;
+    color: var(--text-color); /* Assuming you have defined this in tokens.css */
+    padding: 10px;
+}
+
+user-panel a {
+    display: block;
+    color: var(--primary-color); /* Use your design tokens */
+    text-decoration: none;
+    padding: 8px;
+}
+
+user-panel a:hover {
+    background-color: var(--hover-background-color);
+}
+
+.sign-out {
+    border-top: 1px solid var(--border-color); /* Use your design tokens */
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+
