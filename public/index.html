@@ -17,32 +17,30 @@
     <header>
         <h1><i class="fa fa-compass"></i>Travel Concept Map</h1>
         <nav>
-            <a href="index.html"><i class="fa fa-home"></i>Home</a>
-            <a href="traveler_profile.html"><i class="fa fa-user"></i>Traveler Profile</a>
-            <a href="budget_details.html"><i class="fa fa-money"></i>Budget Details</a>
-            <a href="destination_details.html"><i class="fa fa-list"></i>Destination Details</a>
-            <a href="transportation_method.html"><i class="fa fa-globe"></i>Transportation Method</a>
+            <div class="dropdown">
+                <button class="dropbtn"><h1>Menu</h1></button>
+                <div class="dropdown-content">
+                  <a href="index.html">Home</a>
+                  <a href="traveler_profile.html">Traveler Profile</a>
+                  <a href="budget_details.html">Budget Details</a>
+                  <a href="destination_details.html">Destination Details</a>
+                  <a href="transportation_method.html">Transportation Method</a>
+                  <a><input type="checkbox" id="darkModeToggle" autocomplete="off" />Dark Mode</a>
+            </div>
         </nav>
     </header>
     <main>
-        <!-- <aside>
-            <h2>Concepts</h2>
-            <ul>
-                <li><a href="traveler_profile.html">Traveler Profile</a></li>
-                <li><a href="budget_details.html">Budget Details</a></li>
-                <li><a href="destination_details.html">Destination Details</a></li>
-                <li><a href="transportation_method.html">Transportation Method</a></li>
-            </ul>
-        </aside> -->
         <article>
             <section>
                 <h2>Welcome to the Travel Concept Map</h2>
                 <p>Explore various travel concepts and plan your next adventure!</p>
+                <p>Hover over the <u>menu</u> button to start navigating through our website</p>
             </section>
         </article>
     </main>
     <footer>
         <p>&copy; 2023 Travel Concept Map. All rights reserved.</p>
     </footer>
+<script src="src/darkMode.js"></script>
 </body>
 </html>

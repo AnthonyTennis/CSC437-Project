@@ -12,37 +12,49 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        function loadDestination(url, container) {
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    container.innerHTML = html;
+                });
+        }
+    </script>
 </head>
 <body>
     <header>
         <h1><i class="fa fa-list"></i>Destinations</h1>
         <nav>
-            <a href="index.html"><i class="fa fa-home"></i>Home</a>
-            <a href="traveler_profile.html"><i class="fa fa-user"></i>Traveler Profile</a>
-            <a href="budget_details.html"><i class="fa fa-money"></i>Budget Details</a>
-            <a href="destination_details.html"><i class="fa fa-list"></i>Destination Details</a>
-            <a href="transportation_method.html"><i class="fa fa-globe"></i>Transportation Method</a>
+            <div class="dropdown">
+                <button class="dropbtn"><h1>Menu</h1></button>
+                <div class="dropdown-content">
+                  <a href="index.html">Home</a>
+                  <a href="traveler_profile.html">Traveler Profile</a>
+                  <a href="budget_details.html">Budget Details</a>
+                  <a href="destination_details.html">Destination Details</a>
+                  <a href="transportation_method.html">Transportation Method</a>
+                  <a><input type="checkbox" id="darkModeToggle" autocomplete="off" />Dark Mode</a>
+            </div>
         </nav>
     </header>
     <main>
         <aside>
-            <h2>Destination Info</h2>
-            <p>Location: Paris, France</p>
-            <p>Type: City</p>
+            <h2>Destinations</h2>
+            <ul>
+                <li><a onclick="loadDestination('destinations/paris.html', document.querySelector('article'))">Paris</a></li>
+                <li><a onclick="loadDestination('destinations/washington_dc.html', document.querySelector('article'))">Washington D.C.</a></li>
+                <li><a onclick="loadDestination('destinations/close_all.html', document.querySelector('article'))">Close All</a></li>
+            </ul> 
         </aside>
         <article>
-            <section>
-                <h2>Main Attractions</h2>
-                <ul>
-                    <li>Eiffel Tower</li>
-                    <li>Louvre Museum</li>
-                    <li>Notre-Dame Cathedral</li>
-                </ul>
-            </section>
+            <p>Click on a destination to load its details.</p>
         </article>
     </main>
     <footer>
         <p>&copy; 2023 Travel Concept Map. All rights reserved.</p>
     </footer>
+    <script src="src/darkMode.js"></script>
+
 </body>
 </html>

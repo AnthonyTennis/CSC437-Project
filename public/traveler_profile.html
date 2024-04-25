@@ -17,11 +17,16 @@
     <header>
         <h1><i class="fa fa-user"></i>Traveler Profile</h1>
         <nav>
-            <a href="index.html"><i class="fa fa-home"></i>Home</a>
-            <a href="traveler_profile.html"><i class="fa fa-user"></i>Traveler Profile</a>
-            <a href="budget_details.html"><i class="fa fa-money"></i>Budget Details</a>
-            <a href="destination_details.html"><i class="fa fa-list"></i>Destination Details</a>
-            <a href="transportation_method.html"><i class="fa fa-globe"></i>Transportation Method</a>
+            <div class="dropdown">
+                <button class="dropbtn"><h1>Menu</h1></button>
+                <div class="dropdown-content">
+                  <a href="index.html">Home</a>
+                  <a href="traveler_profile.html">Traveler Profile</a>
+                  <a href="budget_details.html">Budget Details</a>
+                  <a href="destination_details.html">Destination Details</a>
+                  <a href="transportation_method.html">Transportation Method</a>
+                  <a><input type="checkbox" id="darkModeToggle" autocomplete="off" />Dark Mode</a>
+            </div>
         </nav>
     </header>
     <main>
@@ -47,5 +52,7 @@
     <footer>
         <p>&copy; 2023 Travel Concept Map. All rights reserved.</p>
     </footer>
+    <script src="src/darkMode.js"></script>
+
 </body>
 </html>
