@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveler Profile</title>
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="modunple" src="/src/drop-down.ts"></script>
+</head>
+<body>
+    <header>
+        <i class="fa fa-home fa-3x"></i>
+        <h1>My Tours</h1>
+        <drop-down >
+            Blaze
+            <user-panel
+              slot="menu"
+              avatar="/data/avatars/Blaze Pasquale.png">
+              <span slot="profile"><a href="traveler_profile.html">Profile</a></span>
+              <span slot="my_tours"><a href="my_tours.html">My Tours</a></span>
+              <span slot="sign_out"><a href="sign_out.html">Sign Out</a></span>
+            </user-panel>
+        </drop-down>
+    </header>
+    <nav>
+        <a href="index.html"><i class="fa fa-home"></i>Home</a>
+    </nav>
+    <article>
+        <section>
+            <h2>My Tours</h2>
+        </section>
+    </article>
+</body>
+</html>

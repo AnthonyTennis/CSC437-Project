@@ -1,49 +1,86 @@
 body {
     background-color: var(--background-color);
     color: #E0E0E0;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
 }
 
 header {
-    background-color: #1E1E1E;
     color: #FFFFFF;
     padding: 20px;
-    text-align: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    border-radius: 10px;
 }
 
-a {
-    color: var(--primary-color);
+header h1 {
+    margin: 0;
 }
 
-nav {
-    background-color: var(--benday-color);
-    padding: 10px;
+header nav {
     display: flex;
+    align-items: center;
 }
 
-nav a {
-    margin-right: 20px;
+header nav a {
+    margin-left: 20px;
 }
 
-article, section {
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+aside, article {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+aside {
     background-color: var(--benday-color);
-    margin: 10px;
-    padding: 15px;
-    border-radius: 5px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    background-color: var(--benday-color);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
 }
 
 h2, h3 {
     color: var(--primary-color);
 }
 
-h1 {
+a {
     color: var(--primary-color);
 }
 
 i.fa {
     color: var(--primary-color);
+    padding-right: 0.4rem;
 }
 
+footer {
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+    padding: 20px;
+    text-align: center;
+}

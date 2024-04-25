@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/dropdown.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -14,20 +15,31 @@
 </head>
 <body>
     <header>
-        <i class="fa fa-globe fa-3x"></i>
-        <h1>Transportation Method: Air Travel</h1>
+        <h1><i class="fa fa-globe"></i>Transportation Method: Air Travel</h1>
+        <nav>
+            <a href="index.html"><i class="fa fa-home"></i>Home</a>
+            <a href="traveler_profile.html"><i class="fa fa-user"></i>Traveler Profile</a>
+            <a href="budget_details.html"><i class="fa fa-money"></i>Budget Details</a>
+            <a href="destination_details.html"><i class="fa fa-list"></i>Destination Details</a>
+            <a href="transportation_method.html"><i class="fa fa-globe"></i>Transportation Method</a>
+        </nav>
     </header>
-    <nav>
-        <a href="index.html"><i class="fa fa-home"></i> Home</a>
-    </nav>
-    <article>
-        <section>
-            <h2>Details</h2>
+    <main>
+        <aside>
+            <h2>Transportation Ifo</h2>
             <p>Type: Airplane</p>
             <p>Cost: $500</p>
-            <p>Duration: 8 Hours</p>
-            <p>Environmental Impact: High</p>
-        </section>
-    </article>
+        </aside>
+        <article>
+            <section>
+                <h2>Details</h2>
+                <p>Duration: 8 Hours</p>
+                <p>Environmental Impact: High</p>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2023 Travel Concept Map. All rights reserved.</p>
+    </footer>
 </body>
 </html>

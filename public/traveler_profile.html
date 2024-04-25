@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/dropdown.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -14,26 +15,37 @@
 </head>
 <body>
     <header>
-        <i class="fa fa-user fa-3x"></i>
-        <h1>Traveler Profile</h1>
+        <h1><i class="fa fa-user"></i>Traveler Profile</h1>
+        <nav>
+            <a href="index.html"><i class="fa fa-home"></i>Home</a>
+            <a href="traveler_profile.html"><i class="fa fa-user"></i>Traveler Profile</a>
+            <a href="budget_details.html"><i class="fa fa-money"></i>Budget Details</a>
+            <a href="destination_details.html"><i class="fa fa-list"></i>Destination Details</a>
+            <a href="transportation_method.html"><i class="fa fa-globe"></i>Transportation Method</a>
+        </nav>
     </header>
-    <nav>
-        <a href="index.html"><i class="fa fa-home"></i> Home</a>
-    </nav>
-    <article>
-        <section>
-            <h2>Personal Information</h2>
+    <main>
+        <aside>
+            <h2>Traveler Info</h2>
             <p>Name: John Doe</p>
             <p>Age: 30</p>
-            <p>Travel Preferences: Adventure, Culture, Food</p>
-        </section>
-        <section>
-            <h2>Past Travel History</h2>
-            <ul>
-                <li><a href="destination_paris.html">Paris, France</a></li>
-                <li><a href="destination_tokyo.html">Tokyo, Japan</a></li>
-            </ul>
-        </section>
-    </article>
+        </aside>
+        <article>
+            <section>
+                <h2>Personal Information</h2>
+                <p>Travel Preferences: Adventure, Culture, Food</p>
+            </section>
+            <section>
+                <h2>Past Travel History</h2>
+                <ul>
+                    <li><a href="destination_paris.html">Paris, France</a></li>
+                    <li><a href="destination_tokyo.html">Tokyo, Japan</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2023 Travel Concept Map. All rights reserved.</p>
+    </footer>
 </body>
 </html>
