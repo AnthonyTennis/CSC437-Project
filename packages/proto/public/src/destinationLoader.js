@@ -1,4 +1,3 @@
-// destinationLoader.js
 function loadDestination(url, container) {
     fetch(url)
         .then(response => response.text())
