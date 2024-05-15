@@ -26,20 +26,33 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 ));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
-var profiles_exports = {};
-__export(profiles_exports, {
-  default: () => profiles_default
+var mongo_exports = {};
+__export(mongo_exports, {
+  connect: () => connect
 });
-module.exports = __toCommonJS(profiles_exports);
-var import_express = __toESM(require("express"));
-var import_profile_svc = __toESM(require("../services/profile-svc"));
-const router = import_express.default.Router();
-router.get("/:userid", (req, res) => {
-  const { userid } = req.params;
-  import_profile_svc.default.get(userid).then((profile) => res.json(profile)).catch((err) => res.status(404).end());
+module.exports = __toCommonJS(mongo_exports);
+var import_mongoose = __toESM(require("mongoose"));
+var import_dotenv = __toESM(require("dotenv"));
+import_mongoose.default.set("debug", true);
+import_dotenv.default.config();
+function getMongoURI(dbname) {
+  let connection_string = `mongodb://localhost:27017/${dbname}`;
+  const { MONGO_USER, MONGO_PWD, MONGO_CLUSTER } = process.env;
+  if (MONGO_USER && MONGO_PWD && MONGO_CLUSTER) {
+    console.log(
+      "Connecting to MongoDB at",
+      `mongodb+srv://${MONGO_USER}:<password>@${MONGO_CLUSTER}/${dbname}`
+    );
+    connection_string = `mongodb+srv://${MONGO_USER}:${MONGO_PWD}@${MONGO_CLUSTER}/${dbname}?retryWrites=true&w=majority`;
+  } else {
+    console.log("Connecting to MongoDB at ", connection_string);
+  }
+  return connection_string;
+}
+function connect(dbname) {
+  import_mongoose.default.connect(getMongoURI(dbname)).catch((error) => console.log(error));
+}
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  connect
 });
-router.post("/profiles", (req, res) => {
-  const newProfile = req.body;
-  import_profile_svc.default.create(newProfile).then((profile) => res.status(201).send(profile)).catch((err) => res.status(500).send(err));
-});
-var profiles_default = router;

@@ -23,6 +23,8 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 ));
 var import_express = __toESM(require("express"));
 var import_profiles = __toESM(require("./routes/profiles"));
+var import_mongo = require("./services/mongo");
+(0, import_mongo.connect)("ProjectDB");
 const app = (0, import_express.default)();
 const port = process.env.PORT || 3e3;
 const staticDir = process.env.STATIC || "public";
@@ -31,6 +33,10 @@ app.use(import_express.default.json());
 app.use("/api/profiles", import_profiles.default);
 app.get("/hello", (req, res) => {
   res.send("Hello, World");
+});
+router.post("/profiles", (req, res) => {
+  const newProfile = req.body;
+  import_profiles.default.create(newProfile).then((profile) => res.status(201).send(profile)).catch((err) => res.status(500).send(err));
 });
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
