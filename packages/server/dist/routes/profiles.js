@@ -38,8 +38,11 @@ router.get("/:userid", (req, res) => {
   const { userid } = req.params;
   import_profile_svc.default.get(userid).then((profile) => res.json(profile)).catch((err) => res.status(404).end());
 });
-router.post("/profiles", (req, res) => {
+router.post("/", (req, res) => {
   const newProfile = req.body;
   import_profile_svc.default.create(newProfile).then((profile) => res.status(201).send(profile)).catch((err) => res.status(500).send(err));
+});
+router.get("/", (req, res) => {
+  import_profile_svc.default.index().then((list) => res.json(list)).catch((err) => res.status(500).send(err));
 });
 var profiles_default = router;

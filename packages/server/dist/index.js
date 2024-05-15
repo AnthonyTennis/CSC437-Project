@@ -34,10 +34,6 @@ app.use("/api/profiles", import_profiles.default);
 app.get("/hello", (req, res) => {
   res.send("Hello, World");
 });
-router.post("/profiles", (req, res) => {
-  const newProfile = req.body;
-  import_profiles.default.create(newProfile).then((profile) => res.status(201).send(profile)).catch((err) => res.status(500).send(err));
-});
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });

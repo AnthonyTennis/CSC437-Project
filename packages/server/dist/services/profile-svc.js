@@ -38,9 +38,9 @@ const ProfileModel = (0, import_mongoose.model)("Profile", ProfileSchema);
 function index() {
   return ProfileModel.find();
 }
-function get(userid) {
-  return ProfileModel.find({ userid }).then((list) => list[0]).catch((err) => {
-    throw `${userid} Not Found`;
+function get(id) {
+  return ProfileModel.find({ id }).then((list) => list[0]).catch((err) => {
+    throw `${id} Not Found`;
   });
 }
 function create(profile) {
