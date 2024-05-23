@@ -12,6 +12,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="module">
+        import { relayEvent } from "src/relayEvent.js";
+        window.relayEvent = relayEvent;
+    </script>
+    <script type="module" src="src/darkMode.js"></script>
 </head>
 <body>
     <header>
@@ -41,6 +46,5 @@
     <footer>
         <p>&copy; 2023 Travel Concept Map. All rights reserved.</p>
     </footer>
-<script src="src/darkMode.js"></script>
 </body>
 </html>
