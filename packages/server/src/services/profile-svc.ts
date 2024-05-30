@@ -35,6 +35,7 @@ function index(): Promise<Profile[]> {
 }
 
 function get(id: String): Promise<Profile> {
+  console.log(`get(${id})`);
   return ProfileModel.find({ id })
     .then((list) => list[0])
     .catch((err) => {
@@ -47,4 +48,12 @@ function create(profile: Profile): Promise<Profile> {
   return p.save();
 }
 
-export default { index, get, create };
+function update(id: String, profile: Partial<Profile>): Promise<Profile> {
+  return ProfileModel.findOneAndUpdate({ id }, profile, { new: true })
+    .then((updated) => {
+      if (!updated) throw `${id} not updated`;
+      else return updated as Profile;
+    });
+}
+
+export default { index, get, create, update };

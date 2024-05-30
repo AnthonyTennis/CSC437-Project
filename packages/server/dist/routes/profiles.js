@@ -45,4 +45,10 @@ router.post("/", (req, res) => {
 router.get("/", (req, res) => {
   import_profile_svc.default.index().then((list) => res.json(list)).catch((err) => res.status(500).send(err));
 });
+router.put("/:userid", (req, res) => {
+  console.log("PUT /profiles/:userid");
+  const { userid } = req.params;
+  const newProfile = req.body;
+  import_profile_svc.default.update(userid, newProfile).then((profile) => res.json(profile)).catch((err) => res.status(404).end());
+});
 var profiles_default = router;

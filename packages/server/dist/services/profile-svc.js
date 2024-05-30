@@ -39,6 +39,7 @@ function index() {
   return ProfileModel.find();
 }
 function get(id) {
+  console.log(`get(${id})`);
   return ProfileModel.find({ id }).then((list) => list[0]).catch((err) => {
     throw `${id} Not Found`;
   });
@@ -47,4 +48,10 @@ function create(profile) {
   const p = new ProfileModel(profile);
   return p.save();
 }
-var profile_svc_default = { index, get, create };
+function update(id, profile) {
+  return ProfileModel.findOneAndUpdate({ id }, profile, { new: true }).then((updated) => {
+    if (!updated) throw `${id} not updated`;
+    else return updated;
+  });
+}
+var profile_svc_default = { index, get, create, update };
