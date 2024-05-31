@@ -2,9 +2,6 @@ import { prepareTemplate } from "./template.js";
 import { loadJSON } from "./jsonLoader.js";
 
 export class ProfileViewElement extends HTMLElement {
-  static styles = `
-    /* Add your styles here */
-  `;
 
   static template = prepareTemplate(`
     <template>
