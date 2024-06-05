@@ -13,10 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="module">
-        import { relayEvent } from "src/relayEvent.js";
+        import { relayEvent } from "/src/relayEvent.js";
         window.relayEvent = relayEvent;
     </script>
-    <script type="module" src="src/darkMode.js"></script>
+    <script type="module" src="/src/darkMode.js"></script>
 </head>
 <body>
     <header>
@@ -32,12 +32,12 @@
                   <a href="transportation_method.html">Transportation Method</a>
                   <a href="login.html">Login</a>
                   <mu-auth>
-                  <a
-                    href="#"
-                    onclick="relayEvent(event, 'auth:message', ['auth/signout'])">
-                    Sign out
-                  </a>
-                </mu-auth>
+                    <a
+                        href="#"
+                        onclick="relayEvent(event, 'auth:message', ['auth/signout'])">
+                        Sign out
+                    </a>
+                  </mu-auth>
                   <a><input type="checkbox" id="darkModeToggle" autocomplete="off" />Dark Mode</a>
             </div>
         </nav>
