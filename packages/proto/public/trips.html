@@ -32,6 +32,7 @@
     <script type="module" src="/src/darkMode.js"></script>
     <script type="module" src="/src/restfulForm.js"></script>
     <script type="module" src="/src/tripManager.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
 </head>
 <body>
     <header>
@@ -68,6 +69,10 @@
             <label>
                 <span>Start Date:</span>
                 <input type="date" name="startDate" required>
+            </label>
+            <label>
+                <span>Departure Airport:</span>
+                <input type="string" name="departureAirport" required>
             </label>
             <button type="submit">Create Trip</button>
         </form>
