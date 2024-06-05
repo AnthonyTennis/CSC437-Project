@@ -1,0 +1,25 @@
+body {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h2,
+h2 {
+  font-family: "Merriweather", "Times New Roman", serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-family: "Merriweather", "Times New Roman", serif;
+  font-weight: 900;
+}
