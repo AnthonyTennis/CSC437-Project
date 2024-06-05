@@ -45,7 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const tripId = form.dataset.tripId;
             const cityData = {
                 cityName: form.cityName.value,
-                numDays: parseInt(form.numDays.value)
+                numDays: parseInt(form.numDays.value),
+                modeOfTransport: form.modeOfTransport.value
             };
 
             try {
@@ -73,7 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const cityName = form.dataset.editCityName;
             const cityData = {
                 cityName: form.editCityName.value, // Include city name in the payload
-                numDays: parseInt(form.editNumDays.value)
+                numDays: parseInt(form.editNumDays.value),
+                modeOfTransport: form.editModeOfTransport.value
             };
 
             try {
@@ -139,6 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const tripId = event.target.dataset.tripId;
             const cityName = event.target.dataset.cityName;
             const numDays = event.target.dataset.numDays;
+            const modeOfTransport = event.target.dataset.modeOfTransport;
             const form = document.createElement("form");
             form.dataset.editTripId = tripId;
             form.dataset.editCityName = cityName;
@@ -150,6 +153,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 <label>
                     <span>Number of Days:</span>
                     <input type="number" name="editNumDays" value="${numDays}" required>
+                </label>
+                <label>
+                    <span>Mode of Transport:</span>
+                    <input type="text" name="editModeOfTransport" value="${modeOfTransport}" required>
                 </label>
                 <button type="submit">Save</button>
             `;
@@ -180,25 +187,29 @@ document.addEventListener("DOMContentLoaded", () => {
         tripList.innerHTML = "";
 
         for (const trip of trips) {
+            // increment trip,startDate by one
+            trip.startDate = new Date(trip.startDate);
+            trip.startDate.setDate(trip.startDate.getDate() + 1);
             const tripElement = document.createElement("div");
             // calculate return date as a const (add the numDays from teh cities)
             const returnDate = new Date(trip.startDate);
             const totalDays = trip.cities.reduce((total, city) => total + city.numDays, 0);
             returnDate.setDate(returnDate.getDate() + totalDays);
             tripElement.innerHTML = `
+
             <aside>
                 <h3>${trip.tripName}</h3>
                 <p>Departure Airport: ${trip.departureAirport}</p>
-                <p>Start Date: ${new Date(trip.startDate).toLocaleDateString()}</p>
+                <p>Start Date: ${trip.startDate.toLocaleDateString()}</p>
                 <p>Return Date: ${returnDate.toLocaleDateString()}</p>
                 <p>Duration: ${trip.cities.reduce((total, city) => total + city.numDays, 0)} days</p>
                 <h4>Cities:</h4>
                 <ul id="city-list-${trip.tripId}">
                     ${trip.cities.map(city => `
                         <li data-city-name="${city.cityName}">
-                            ${city.cityName} - ${city.numDays} days
+                            ${city.modeOfTransport} to ${city.cityName} - ${city.numDays} days
                             <button data-delete-city data-trip-id="${trip.tripId}" data-city-name="${city.cityName}">Remove City</button>
-                            <button data-edit-city data-trip-id="${trip.tripId}" data-city-name="${city.cityName}" data-num-days="${city.numDays}">Edit City</button>
+                            <button data-edit-city data-trip-id="${trip.tripId}" data-city-name="${city.cityName}" data-num-days="${city.numDays}" data-mode-of-transport="${city.modeOfTransport}">Edit City</button>
                         </li>
                     `).join("")}
                 </ul>
@@ -211,6 +222,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     <label>
                         <span>Number of Days:</span>
                         <input type="number" name="numDays" required>
+                    </label>
+                    <p></p>
+                    <label>
+                        <span>Mode of Transport:</span>
+                        <input name="modeOfTransport" required>
                     </label>
                     <p></p>
                     <button type="submit">Add City</button>
