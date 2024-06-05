@@ -181,11 +181,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         for (const trip of trips) {
             const tripElement = document.createElement("div");
+            // calculate return date as a const (add the numDays from teh cities)
+            const returnDate = new Date(trip.startDate);
+            const totalDays = trip.cities.reduce((total, city) => total + city.numDays, 0);
+            returnDate.setDate(returnDate.getDate() + totalDays);
             tripElement.innerHTML = `
             <aside>
                 <h3>${trip.tripName}</h3>
                 <p>Departure Airport: ${trip.departureAirport}</p>
                 <p>Start Date: ${new Date(trip.startDate).toLocaleDateString()}</p>
+                <p>Return Date: ${returnDate.toLocaleDateString()}</p>
                 <p>Duration: ${trip.cities.reduce((total, city) => total + city.numDays, 0)} days</p>
                 <h4>Cities:</h4>
                 <ul id="city-list-${trip.tripId}">

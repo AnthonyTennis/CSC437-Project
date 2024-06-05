@@ -7,18 +7,67 @@ export class ProfileViewElement extends HTMLElement {
   static template = prepareTemplate(`
     <template>
       <section>
-        <img slot="avatar" />
-        <h1><slot name="name"></slot></h1>
-        <dl>
+        <div class="profile-header">
+          <div class="profile-info">
+            <h1 class="profile-name"><slot name="name"></slot></h1>
+            <p class="profile-nickname"><slot name="nickname"></slot></p>
+          </div>
+        </div>
+        <dl class="profile-details">
           <dt>Home</dt>
           <dd><slot name="home"></slot></dd>
-          <dt>Nickname</dt>
-          <dd><slot name="nickname"></slot></dd>
         </dl>
       </section>
-      <style>${ProfileViewElement.styles}</style>
+      <style>
+        :host {
+          display: block;
+          font-family: Arial, sans-serif;
+          max-width: 600px;
+          margin: auto;
+          padding: 20px;
+          border-radius: 8px;
+        }
+        .profile-header {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+        }
+        .avatar {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-right: 20px;
+        }
+        .profile-info {
+          flex: 1;
+        }
+        .profile-name {
+          font-size: 24px;
+          margin: 0;
+        }
+        .profile-nickname {
+          font-size: 16px;
+          color: #888;
+          margin: 0;
+        }
+        .profile-details {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
+        .profile-details dt {
+          font-weight: bold;
+          margin-top: 10px;
+        }
+        .profile-details dd {
+          margin: 0;
+          margin-bottom: 10px;
+        }
+      </style>
     </template>
   `);
+
 
   get src() {
     return this.getAttribute("src");
