@@ -1,4 +1,5 @@
 import { loadJSON } from "./jsonLoader.js";
+import { renderSlots } from "./profileView.js";
 import { prepareTemplate } from "./template.js";
 import { Observer } from "@calpoly/mustang";
 
@@ -100,7 +101,7 @@ export class RestfulFormElement extends HTMLElement {
     this._authObserver.observe().then((obs) => {
       obs.setEffect(({ user }) => {
         this._user = user;
-        if (this.src) {
+        if (this.src && user.authenticated && !this.isNew) {
           loadJSON(
             this.src,
             this,

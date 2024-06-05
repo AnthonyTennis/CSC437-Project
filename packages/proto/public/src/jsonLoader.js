@@ -53,9 +53,8 @@ export function loadJSON(
   authorization
 ) {
   container.replaceChildren();
-  return fetch(src, {
-    headers: authorization || undefined
-  })
+  const options = authorization ? { headers: authorization } : {};
+  return fetch(src, options)
     .then((response) => {
       if (response.status !== 200) {
         throw {

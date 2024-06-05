@@ -47,8 +47,8 @@ export class ProfileViewElement extends HTMLElement {
   connectedCallback() {
     this._authObserver.observe(({ user }) => {
       this._user = user;
-
-      if (this.src) {
+  
+      if (this.src && user.authenticated) {
         loadJSON(this.src, this, renderSlots, this.authorization);
       }
     });
@@ -56,18 +56,31 @@ export class ProfileViewElement extends HTMLElement {
 }
 
 export function renderSlots(json) {
+  console.log("RenderingSlots:", json);
   const entries = Object.entries(json);
   const slot = ([key, value]) => {
+    let type = typeof value;
+
+    if (type === "object") {
+      if (Array.isArray(value)) type = "array";
+    }
+
     if (key === "avatar") {
-      return `<img slot="${key}" src="${value}" />`;
-    } else if (Array.isArray(value)) {
-      return `
-        <ul slot="${key}">
-          ${value.map((item) => `<li>${item}</li>`).join("")}
-        </ul>
-      `;
-    } else {
-      return `<span slot="${key}">${value}</span>`;
+      type = "avatar";
+    }
+
+    switch (type) {
+      case "array":
+        return `<ul slot="${key}">
+          ${value.map((s) => `<li>${s}</li>`).join("")}
+          </ul>`;
+      case "avatar":
+        return `<profile-avatar slot="${key}"
+          color="${json.color}"
+          src="${value}">
+        </profile-avatar>`;
+      default:
+        return `<span slot="${key}">${value}</span>`;
     }
   };
 
