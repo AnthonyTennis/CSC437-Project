@@ -112,6 +112,7 @@ export class RestfulFormElement extends HTMLElement {
       });
     });
   }
+  
 
   attributeChangedCallback(name, oldValue, newValue) {
     switch (name) {
