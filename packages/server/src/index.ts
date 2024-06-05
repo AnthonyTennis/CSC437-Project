@@ -1,10 +1,10 @@
 // src/index.ts
-// src/index.ts
 import express, { Request, Response } from "express";
 import profiles from "./routes/profiles";
 import { connect } from "./services/mongo";
 import auth, { authenticateUser } from "./routes/auth";
 import path from "path";
+import trips from "./routes/trips";
 
 connect("ProjectDB");
 const app = express();
@@ -22,6 +22,9 @@ app.use("/node_modules", express.static(nodeModules));
 
 app.use(express.json());
 app.use("/api/profiles", authenticateUser, profiles);
+// app.use("/trips", authenticateUser, trips);
+app.use("/trips", trips);
+
 
 app.get("/hello", (req: Request, res: Response) => {
     res.send("Hello, World");
@@ -37,3 +40,4 @@ app.use((req, res, next) => {
 });
 
 app.use("/auth", auth);
+

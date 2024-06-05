@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traveler Profile</title>
+    <title>Trips</title>
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link rel="stylesheet" href="/styles/page.css" />
     <link rel="stylesheet" href="/styles/dropdown.css" />
+    <link rel="stylesheet" href="/styles/trips.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -20,30 +21,29 @@
         }
     </script>
     <script type="module">
-        import { relayEvent } from "../src/relayEvent.js";
-        window.relayEvent = relayEvent;
-    </script>
-    <script type="module" src="../src/jsonLoader.js"></script>
-    <script type="module" src="../src/darkMode.js"></script>
-    <script type="module" src="../src/travelerProfileForm.js"></script>
-    <script type="module" src="../src/profileView.js"></script>
-    <script type="module">
         import { define, Auth } from "@calpoly/mustang";
-      
+        
         define({ "mu-auth": Auth.Provider });
     </script>
+    <script type="module">
+        import { relayEvent } from "/src/relayEvent.js";
+        window.relayEvent = relayEvent;
+    </script>
+    <script type="module" src="/src/darkMode.js"></script>
+    <script type="module" src="/src/restfulForm.js"></script>
+    <script type="module" src="/src/tripManager.js"></script>
 </head>
 <body>
     <header>
-        <h1><i class="fa fa-user"></i>Trips</h1>
+        <h1><i class="fa fa-user-plus"></i>Trips</h1>
         <nav>
             <div class="dropdown">
                 <button class="dropbtn"><h1>Menu</h1></button>
                 <div class="dropdown-content">
-                  <a href="../index.html">Home</a>
-                  <a href="traveler_profile.html">Traveler Profile</a>
+                  <a href="index.html">Home</a>
+                  <a href="/profile/traveler_profile.html">Traveler Profile</a>
                   <a href="trips.html">Trips</a>
-                  <a href="../login.html">Login</a>
+                  <a href="login.html">Login</a>
                   <mu-auth>
                     <a
                         href="#"
@@ -52,14 +52,30 @@
                     </a>
                   </mu-auth>
                   <a><input type="checkbox" id="darkModeToggle" autocomplete="off" />Dark Mode</a>
+                </div>
             </div>
         </nav>
     </header>
-    <mu-auth provides="blazing:auth" redirect="../login.html?next=/profile/traveler_profile.html">
-        <main>
-            <aside>
-                <h2>Trips</h2>
-        </main>
+    <mu-auth provides="blazing:auth" redirect="/login.html?next=/profile/traveler_profile.html">
+    <main>
+        <aside>
+        <h2>Create New Trip</h2>
+        <form id="create-trip-form">
+            <label>
+                <span>Trip Name:</span>
+                <input name="tripName" required>
+            </label>
+            <label>
+                <span>Start Date:</span>
+                <input type="date" name="startDate" required>
+            </label>
+            <button type="submit">Create Trip</button>
+        </form>
+    </aside>
+        <h2>Trips</h2>
+        <div id="trip-list">
+        </div>
+    </main>
     </mu-auth>
     <footer>
         <p>&copy; 2023 Travel Concept Map. All rights reserved.</p>

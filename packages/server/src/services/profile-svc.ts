@@ -21,9 +21,6 @@ const ProfileSchema = new Schema<Profile>(
     name: { type: String, required: true, trim: true },
     nickname: { type: String, trim: true },
     home: { type: String, trim: true },
-    airports: [String],
-    avatar: String,
-    color: String,
   },
   { collection: "user_profiles" }
 );

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trips</title>
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/dropdown.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "@calpoly/mustang": "/node_modules/@calpoly/mustang/dist/mustang.js"
+            }
+        }
+    </script>
+    <script type="module">
+        import { define, Auth } from "@calpoly/mustang";
+        import { HeaderElement } from "/src/components/header.ts";
+
+        define({
+            "mu-auth": Auth.Provider,
+            "app-header": HeaderElement
+        });
+    </script>
+    <script type="module" src="/src/darkMode.ts"></script>
+    <script type="module" src="/src/tripForm.ts"></script>
+</head>
+<body>
+    <mu-auth provides="blazing:auth" redirect="/login.html?next=/trips.html">
+        <article class="page">
+            <app-header></app-header>
+            <main>
+                <h1>Trips</h1>
+                <div id="trip-list">
+                    <!-- Trip list will be populated here -->
+                </div>
+                <h2>Create New Trip</h2>
+                <trip-form>
+                    <label>
+                        <span>Trip Name:</span>
+                        <input name="tripName" required>
+                    </label>
+                    <label>
+                        <span>Start Date:</span>
+                        <input type="date" name="startDate" required>
+                    </label>
+                    <button type="submit">Create Trip</button>
+                </trip-form>
+            </main>
+        </article>
+    </mu-auth>
+    <footer>
+        <p>&copy; 2023 Travel Concept Map. All rights reserved.</p>
+    </footer>
+</body>
+</html>

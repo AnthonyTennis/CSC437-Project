@@ -2,7 +2,7 @@
 import { LitElement, css, html } from "lit";
 import { Events } from "@calpoly/mustang";
 
-export class HeaderElement extends LitElement {
+export class BlazingHeaderElement extends LitElement {
   render() {
     return html`
       <header>
@@ -12,10 +12,7 @@ export class HeaderElement extends LitElement {
             <button class="dropbtn"><h1>Menu</h1></button>
             <div class="dropdown-content">
               <a href="index.html">Home</a>
-              <a href="/profile/traveler_profile.html">Traveler Profile</a>
-              <a href="budget_details.html">Budget Details</a>
-              <a href="destination_details.html">Destination Details</a>
-              <a href="transportation_method.html">Transportation Method</a>
+              <a href="trips.html">Trips</a>
               <a href="login.html">Login</a>
               <a @click=${this.signOut}>Sign out</a>
               <a>

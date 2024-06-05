@@ -14,8 +14,6 @@ export class ProfileViewElement extends HTMLElement {
           <dd><slot name="home"></slot></dd>
           <dt>Nickname</dt>
           <dd><slot name="nickname"></slot></dd>
-          <dt>Airports</dt>
-          <dd><slot name="airports"></slot></dd>
         </dl>
       </section>
       <style>${ProfileViewElement.styles}</style>
@@ -44,15 +42,15 @@ export class ProfileViewElement extends HTMLElement {
     );
   }
 
-  connectedCallback() {
-    this._authObserver.observe(({ user }) => {
-      this._user = user;
-  
-      if (this.src && user.authenticated) {
-        loadJSON(this.src, this, renderSlots, this.authorization);
-      }
-    });
-  }
+connectedCallback() {
+  this._authObserver.observe(({ user }) => {
+    this._user = user;
+
+    if (this.src && user.authenticated) {
+      loadJSON(this.src, this, renderSlots, this.authorization);
+    }
+  });
+}
 }
 
 export function renderSlots(json) {

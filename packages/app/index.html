@@ -14,32 +14,35 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="module">
         import { define, Auth, Events } from "@calpoly/mustang";
-        import { HeaderElement } from "/src/components/header";
+        import { BlazingHeaderElement } from "/src/components/blazing-header";
       
         define({
           "mu-auth": Auth.Provider,
-          "app-header": HeaderElement
+          "app-header": BlazingHeaderElement
         });
       
         window.relayEvent = Events.relay;
     </script>
     <script type="module" src="/src/darkMode.ts"></script>
+    <script type="module" src="/src/main"></script>
 </head>
-<mu-auth provides="blazing:auth" redirect="./login.html">
     <body>
-    <app-header></app-header>
-    <main>
-        <article>
-            <section>
-                <h2>Welcome to the Travel Concept Map</h2>
-                <p>Explore various travel concepts and plan your next adventure!</p>
-                <p>Hover over the <u>menu</u> button to start navigating through our website</p>
-            </section>
-        </article>
-    </main>
-    <footer>
-        <p>&copy; 2023 Travel Concept Map. All rights reserved.</p>
-    </footer>
-</body>
-</mu-auth>
+        <mu-auth provides="blazing:auth" redirect="./login.html">
+            <mu-store provides="blazing:model">
+                <app-header></app-header>
+                <main>
+                    <article>
+                        <section>
+                            <h2>Welcome to the Travel Concept Map</h2>
+                            <p>Explore various travel concepts and plan your next adventure!</p>
+                            <p>Hover over the <u>menu</u> button to start navigating through our website</p>
+                        </section>
+                    </article>
+                </main>
+                <footer>
+                    <p>&copy; 2023 Travel Concept Map. All rights reserved.</p>
+                </footer>
+            </mu-store>
+        </mu-auth>
+    </body>
 </html>

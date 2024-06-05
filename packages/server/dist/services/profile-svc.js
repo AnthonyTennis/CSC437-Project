@@ -27,10 +27,7 @@ const ProfileSchema = new import_mongoose.Schema(
     id: { type: String, required: true, trim: true },
     name: { type: String, required: true, trim: true },
     nickname: { type: String, trim: true },
-    home: { type: String, trim: true },
-    airports: [String],
-    avatar: String,
-    color: String
+    home: { type: String, trim: true }
   },
   { collection: "user_profiles" }
 );

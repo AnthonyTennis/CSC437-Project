@@ -1,0 +1,174 @@
+[33mcommit 8c87d906b857205ed6655cfbe83cb9504f5ffb48[m[33m ([m[1;36mHEAD -> [m[1;32mLabC-Test[m[33m)[m
+Author: AnthonyTennis <teciorowskianthony3@gmail.com>
+Date:   Wed Jun 5 10:27:33 2024 -0700
+
+    Add trips remove rest
+
+[33mcommit 703e994b36bfa4b4901b39f6260c04145c65eb0a[m[33m ([m[1;31morigin/LabC[m[33m, [m[1;32mLabC-TryThis[m[33m, [m[1;32mLabC[m[33m)[m
+Author: AnthonyTennis <teciorowskianthony3@gmail.com>
+Date:   Tue Jun 4 23:30:29 2024 -0700
+
+    C1 with index and login done
+
+[33mcommit 1125e8e7f91836f41d15a5e603e012c56cc0b72b[m[33m ([m[1;31morigin/LabB-Done[m[33m, [m[1;32mLabB-Done[m[33m, [m[1;32mCheckSomethingB[m[33m)[m
+Author: AnthonyTennis <teciorowskianthony3@gmail.com>
+Date:   Tue Jun 4 22:15:01 2024 -0700
+
+    Lab B done
+
+[33mcommit c63d8d614ca34761005c97814ac2816ccae1af47[m
+Author: AnthonyTennis <teciorowskianthony3@gmail.com>
+Date:   Tue Jun 4 22:08:33 2024 -0700
+
+    stuff
+
+[33mcommit 77b3332609706760e9b3fc8d74e59f95270bd5ef[m
+Author: AnthonyTennis <teciorowskianthony3@gmail.com>
+Date:   Tue Jun 4 22:07:09 2024 -0700
+
+    fixed everything BUT puts on edit profile form
+
+[33mcommit bb1bf4b8b9ad9d724825b324c0ae50d929853868[m
+Author: AnthonyTennis <teciorowskianthony3@gmail.com>
+Date:   Tue Jun 4 21:53:30 2024 -0700
+
+    Fixed the getter on profile page, puts still broken
+
+[33mcommit 731cea117dff9f2cc407f6d7e82748775201316b[m[33m ([m[1;31morigin/LabB[m[33m, [m[1;32mLabB[m[33m)[m
+Author: AnthonyTennis <teciorowskianthony3@gmail.com>
+Date:   Tue Jun 4 21:25:19 2024 -0700
+
+    Nearly fully done LabB
+
+[33mcommit acdae72356229e46bce1e76dcc7a5285d4368b8d[m
+Author: AnthonyTennis <teciorowskianthony3@gmail.com>
+Date:   Tue Jun 4 20:13:59 2024 -0700
+
+    B7
+
+[33mcommit 38547abc517eee0646d323c3d281135b484189d6[m
+Author: AnthonyTennis <teciorowskianthony3@gmail.com>
+Date:   Thu May 30 19:25:40 2024 -0700
+
+    B7
+
+[33mcommit 9fd000bf30731d556c73ceee68632984142d8bc1[m
+Author: AnthonyTennis <teciorowskianthony3@gmail.com>
+Date:   Thu May 30 17:53:44 2024 -0700
+
+    B7
+
+[33mcommit 9380f2903e4b0a3cd87aaa6b2f7459340f6ccd43[m
+Author: AnthonyTennis <teciorowskianthony3@gmail.com>
+Date:   Thu May 30 16:00:55 2024 -0700
+
+    B6
+
+[33mcommit bbf30219bfef03b377d4d6b656b10c8d3849c0f0[m
+Author: AnthonyTennis <teciorowskianthony3@gmail.com>
+Date:   Thu May 30 15:52:04 2024 -0700
+
+    B5
+
+[33mcommit ca84aadf830bed6e4f0019db24e55f377d78a60c[m
+Author: AnthonyTennis <teciorowskianthony3@gmail.com>
+Date:   Wed May 29 21:36:13 2024 -0700
+
+    B4
+
+[33mcommit 484b112373210ce8dfef9442dfbee42a631a02b3[m
+Author: anthonytennis <teciorowskianthony3@gmail.com>
+Date:   Wed May 22 20:08:38 2024 -0700
+
+    B3
+
+[33mcommit edef5422dd54c82f5ebdae5b13c51e81bdd00793[m
+Author: anthonytennis <teciorowskianthony3@gmail.com>
+Date:   Tue May 14 19:14:04 2024 -0700
+
+    B2 done
+
+[33mcommit e08d438fef61c43392f6e6400751dd62b468e955[m
+Author: anthonytennis <teciorowskianthony3@gmail.com>
+Date:   Tue May 14 18:55:35 2024 -0700
+
+    partial B2
+
+[33mcommit de4cc411c7982f1482e432d63450e5ede8e3e1c6[m
+Author: anthonytennis <teciorowskianthony3@gmail.com>
+Date:   Tue May 14 18:15:27 2024 -0700
+
+    B1 done:
+
+[33mcommit cae3f00dbf35e935c1d042e9b1cd260627c2cdd3[m
+Author: anthonytennis <teciorowskianthony3@gmail.com>
+Date:   Tue May 14 17:57:33 2024 -0700
+
+    move everything into proto package
+
+[33mcommit 39018b41414d57fcbd01bc2e8192898a23319a52[m[33m ([m[1;31morigin/LabA[m[33m)[m
+Author: anthonytennis <teciorowskianthony3@gmail.com>
+Date:   Wed Apr 24 20:49:33 2024 -0700
+
+    Complete through A8
+
+[33mcommit ee180b3033f9b6ac10e28ff4a16fb3d184aaed5a[m
+Author: anthonytennis <teciorowskianthony3@gmail.com>
+Date:   Wed Apr 24 20:36:48 2024 -0700
+
+    Done through A7
+
+[33mcommit 99cf8c5b09ea5d20000013c29190ad27cc7702fb[m
+Author: anthonytennis <teciorowskianthony3@gmail.com>
+Date:   Wed Apr 24 18:57:27 2024 -0700
+
+    Through A5
+
+[33mcommit c037a67c86cf8a60536e19598492407ff507a7b7[m[33m ([m[1;31morigin/pe-1[m[33m)[m
+Author: anthonytennis <teciorowskianthony3@gmail.com>
+Date:   Sat Feb 3 22:38:09 2024 -0800
+
+    Move page.css vars to tokens and reset
+
+[33mcommit a6ace9738174dcee31488c4f0e0a7cb15a7ccd58[m
+Author: anthonytennis <teciorowskianthony3@gmail.com>
+Date:   Sat Feb 3 22:31:00 2024 -0800
+
+    Add layout
+
+[33mcommit d7c9b6a97e6fcdd1d720edceacc5c1279a4fb1f9[m
+Author: anthonytennis <teciorowskianthony3@gmail.com>
+Date:   Sat Feb 3 22:28:02 2024 -0800
+
+    Added style & font-awesome icons
+
+[33mcommit 1052a2c5602383488d88bbaa3618f62b6de190fa[m
+Merge: 082f3b2 4ec6ff7
+Author: AnthonyTennis <teciorowskianthony3@gmail.com>
+Date:   Wed Jan 17 07:27:20 2024 -0800
+
+    Merge branch 'main' of https://github.com/AnthonyTennis/CSC437-Project
+
+[33mcommit 082f3b26f0fc07b179dfa266e5f22676d1d6f49d[m
+Author: AnthonyTennis <teciorowskianthony3@gmail.com>
+Date:   Wed Jan 17 07:27:12 2024 -0800
+
+    initial
+
+[33mcommit 4ec6ff71b55f3e74405d5450c0e877d4bbf0344b[m
+Author: AnthonyTennis <60322276+AnthonyTennis@users.noreply.github.com>
+Date:   Wed Jan 17 07:11:52 2024 -0800
+
+    Update README.md
+
+[33mcommit ac796d83d53b243280aa7909c38a79f6ecdc49a5[m
+Author: AnthonyTennis <60322276+AnthonyTennis@users.noreply.github.com>
+Date:   Wed Jan 17 07:06:50 2024 -0800
+
+    Update README.md
+
+[33mcommit af696ab9db8ca4fddbd1601316cbcdf8c733df94[m
+Author: AnthonyTennis <60322276+AnthonyTennis@users.noreply.github.com>
+Date:   Wed Jan 17 06:06:11 2024 -0800
+
+    Initial commit
