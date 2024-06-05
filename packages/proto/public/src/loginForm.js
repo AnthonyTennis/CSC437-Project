@@ -4,11 +4,11 @@ import "./restfulForm.js";
 
 export class LoginFormElement extends HTMLElement {
   static template = prepareTemplate(`
-        <template>
-        <restful-form new src="/auth/login">
-            <slot></slot>
-        </restful-form>
-        </template>
+    <template>
+      <restful-form new src="/auth/login">
+        <slot></slot>
+      </restful-form>
+    </template>
   `);
 
   get next() {

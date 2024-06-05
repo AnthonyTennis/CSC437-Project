@@ -55,7 +55,7 @@ export class ProfileViewElement extends HTMLElement {
   }
 }
 
-function renderSlots(json) {
+export function renderSlots(json) {
   const entries = Object.entries(json);
   const slot = ([key, value]) => {
     if (key === "avatar") {
