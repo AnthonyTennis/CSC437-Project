@@ -1,5 +1,6 @@
 import { prepareTemplate } from "./template.js";
 import { loadJSON } from "./jsonLoader.js";
+import { Auth, Observer } from "@calpoly/mustang";
 
 export class ProfileViewElement extends HTMLElement {
 
@@ -32,10 +33,25 @@ export class ProfileViewElement extends HTMLElement {
     );
   }
 
+  _authObserver = new Observer(this, "blazing:auth");
+
+  get authorization() {
+    console.log("Authorization for user, ", this._user);
+    return (
+      this._user?.authenticated && {
+        Authorization: `Bearer ${this._user.token}`
+      }
+    );
+  }
+
   connectedCallback() {
-    if (this.src) {
-      loadJSON(this.src, this, renderSlots);
-    }
+    this._authObserver.observe(({ user }) => {
+      this._user = user;
+
+      if (this.src) {
+        loadJSON(this.src, this, renderSlots, this.authorization);
+      }
+    });
   }
 }
 

@@ -15,7 +15,7 @@
     <script type="importmap">
         {
           "imports": {
-            "@calpoly/mustang": "/node_modules/@calpoly/mustang/dist/mustang.mjs"
+            "@calpoly/mustang": "/node_modules/@calpoly/mustang/dist/mustang.js"
           }
         }
     </script>
@@ -45,11 +45,17 @@
                   <a href="budget_details.html">Budget Details</a>
                   <a href="destination_details.html">Destination Details</a>
                   <a href="transportation_method.html">Transportation Method</a>
-                  <a href="login.html">Login/ Logout</a>
+                  <a href="login.html">Login</a>
+                  <a
+                    href="#"
+                    onclick="relayEvent(event, 'auth:message', ['auth/signout'])">
+                    Sign out
+                  </a>
                   <a><input type="checkbox" id="darkModeToggle" autocomplete="off" />Dark Mode</a>
             </div>
         </nav>
     </header>
+    <mu-auth provides="blazing:auth" redirect="./login.html">
     <main>
         <aside>
             <h2>Traveler Info</h2>
@@ -89,6 +95,7 @@
             </traveler-profile-form>
         </aside>
     </main>
+    </mu-auth>
     <footer>
         <p>&copy; 2023 Travel Concept Map. All rights reserved.</p>
     </footer>

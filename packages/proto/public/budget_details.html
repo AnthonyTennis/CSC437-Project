@@ -30,7 +30,12 @@
                   <a href="budget_details.html">Budget Details</a>
                   <a href="destination_details.html">Destination Details</a>
                   <a href="transportation_method.html">Transportation Method</a>
-                  <a href="login.html">Login/ Logout</a>
+                  <a href="login.html">Login</a>
+                  <a
+                    href="#"
+                    onclick="relayEvent(event, 'auth:message', ['auth/signout'])">
+                    Sign out
+                  </a>
                   <a><input type="checkbox" id="darkModeToggle" autocomplete="off" />Dark Mode</a>
             </div>
         </nav>

@@ -53,7 +53,7 @@ export class JsonObjectElement extends HTMLElement {
 
 customElements.define("json-object", JsonObjectElement);
 
-export function loadJSON(src, container, render) {
+export function loadJSON(src, container, render, headers = {}) {
   console.log('we are trying to load JSON');
   container.replaceChildren();
   fetch(src)

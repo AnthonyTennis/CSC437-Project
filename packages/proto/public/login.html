@@ -12,11 +12,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="importmap">
+        {
+          "imports": {
+            "@calpoly/mustang": "/node_modules/@calpoly/mustang/dist/mustang.js"
+          }
+        }
+    </script>
     <script type="module">
-        import { relayEvent } from "src/relayEvent.js";
+        import { define, Auth } from "@calpoly/mustang";
+        
+        define({ "mu-auth": Auth.Provider });
+    </script>
+    <script type="module" src="/src/loginForm.js"></script>
+    <script type="module">
+        import { relayEvent } from "/src/relayEvent.js";
         window.relayEvent = relayEvent;
     </script>
-    <script type="module" src="src/darkMode.js"></script>
+    <script type="module" src="/src/darkMode.js"></script>
 </head>
 <body>
     <header>
@@ -30,17 +43,40 @@
                   <a href="budget_details.html">Budget Details</a>
                   <a href="destination_details.html">Destination Details</a>
                   <a href="transportation_method.html">Transportation Method</a>
-                  <a href="login.html">Login/ Logout</a>
+                  <a href="login.html">Login</a>
+                  <a
+                    href="#"
+                    onclick="relayEvent(event, 'auth:message', ['auth/signout'])">
+                    Sign out
+                  </a>
                   <a><input type="checkbox" id="darkModeToggle" autocomplete="off" />Dark Mode</a>
             </div>
         </nav>
     </header>
     <main>
         <aside>
-            <h2>LogIn</h2>
-            <p></p>
+          <h2>LogIn</h2>
+          <mu-auth>
+            <main class="card">
+              <login-form>
+                <label>
+                  <span>Username:</span>
+                  <input name="username" autocomplete="off" />
+                </label>
+                <label>
+                  <span>Password:</span>
+                  <input type="password" name="password" />
+                </label>
+              </login-form>
+            </main>
+            <p>
+              Or did you want to
+              <a href="./new_user.html">Sign up as a new user</a>
+              ?
+            </p>
+          </mu-auth>
         </aside>
-    </main>
+      </main>
     <footer>
         <p>&copy; 2023 Travel Concept Map. All rights reserved.</p>
     </footer>
