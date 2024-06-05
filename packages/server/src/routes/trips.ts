@@ -90,4 +90,15 @@ router.delete("/:tripId/cities/:cityName", (req: Request, res: Response) => {
       .catch((err) => res.status(404).end());
 });
 
+router.put("/:tripId/reorder", (req: Request, res: Response) => {
+  const { tripId } = req.params;
+  const { newOrder } = req.body;
+
+  trips
+    .reorderCities(tripId, newOrder)
+    .then((trip: Trip) => res.json(trip))
+    .catch((err) => res.status(500).send(err));
+});
+
+
 export default router;

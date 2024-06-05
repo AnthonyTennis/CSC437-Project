@@ -16,6 +16,26 @@ var __copyProps = (to, from, except, desc) => {
   return to;
 };
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var __async = (__this, __arguments, generator) => {
+  return new Promise((resolve, reject) => {
+    var fulfilled = (value) => {
+      try {
+        step(generator.next(value));
+      } catch (e) {
+        reject(e);
+      }
+    };
+    var rejected = (value) => {
+      try {
+        step(generator.throw(value));
+      } catch (e) {
+        reject(e);
+      }
+    };
+    var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
+    step((generator = generator.apply(__this, __arguments)).next());
+  });
+};
 var trips_svc_exports = {};
 __export(trips_svc_exports, {
   default: () => trips_svc_default
@@ -24,13 +44,15 @@ module.exports = __toCommonJS(trips_svc_exports);
 var import_mongoose = require("mongoose");
 const CitySchema = new import_mongoose.Schema({
   cityName: { type: String, required: true, trim: true },
-  numDays: { type: Number, required: true }
+  numDays: { type: Number, required: true },
+  modeOfTransport: { type: String, required: true, trim: true }
 });
 const TripSchema = new import_mongoose.Schema({
   tripId: { type: String, required: true, trim: true },
   tripName: { type: String, required: true, trim: true },
   cities: [CitySchema],
-  startDate: { type: Date, required: true }
+  startDate: { type: Date, required: true },
+  departureAirport: { type: String, required: true, trim: true }
 });
 const TripModel = (0, import_mongoose.model)("Trip", TripSchema);
 function indexTrips() {
@@ -98,6 +120,19 @@ function removeCity(tripId, cityName) {
     if (!updatedTrip) throw `City ${cityName} not removed from Trip ${tripId}`;
   });
 }
+function reorderCities(tripId, newOrder) {
+  return __async(this, null, function* () {
+    const trip = yield TripModel.findOne({ tripId });
+    if (!trip) throw `Trip ${tripId} not found`;
+    const cityMap = trip.cities.reduce((map, city) => {
+      map[city.cityName] = city;
+      return map;
+    }, {});
+    trip.cities = newOrder.map((cityName) => cityMap[cityName]);
+    yield trip.save();
+    return trip;
+  });
+}
 var trips_svc_default = {
   indexTrips,
   getTrip,
@@ -107,5 +142,6 @@ var trips_svc_default = {
   getCity,
   addCity,
   updateCity,
-  removeCity
+  removeCity,
+  reorderCities
 };

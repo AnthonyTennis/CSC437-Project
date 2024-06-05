@@ -72,4 +72,9 @@ router.delete("/:tripId/cities/:cityName", (req, res) => {
   const { tripId, cityName } = req.params;
   import_trips_svc.default.removeCity(tripId, cityName).then(() => res.status(204).end()).catch((err) => res.status(404).end());
 });
+router.put("/:tripId/reorder", (req, res) => {
+  const { tripId } = req.params;
+  const { newOrder } = req.body;
+  import_trips_svc.default.reorderCities(tripId, newOrder).then((trip) => res.json(trip)).catch((err) => res.status(500).send(err));
+});
 var trips_default = router;

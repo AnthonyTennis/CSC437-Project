@@ -4,6 +4,7 @@ import { Trip, City } from "../models/trips";
 const CitySchema = new Schema<City>({
     cityName: { type: String, required: true, trim: true },
     numDays: { type: Number, required: true },
+    modeOfTransport: { type: String, required: true, trim: true },
 });
 
 const TripSchema = new Schema<Trip>({
@@ -11,6 +12,7 @@ const TripSchema = new Schema<Trip>({
     tripName: { type: String, required: true, trim: true },
     cities: [CitySchema],
     startDate: { type: Date, required: true },
+    departureAirport: { type: String, required: true, trim: true },
 });
 
 const TripModel = model<Trip>("Trip", TripSchema);
@@ -97,6 +99,20 @@ function removeCity(tripId: string, cityName: string): Promise<void> {
         });
 }
 
+async function reorderCities(tripId: string, newOrder: string[]): Promise<Trip> {
+    const trip = await TripModel.findOne({ tripId });
+    if (!trip) throw `Trip ${tripId} not found`;
+
+    const cityMap = trip.cities.reduce((map, city) => {
+        map[city.cityName] = city;
+        return map;
+    }, {} as Record<string, City>);
+
+    trip.cities = newOrder.map(cityName => cityMap[cityName]);
+    await trip.save();
+    return trip;
+}
+
 export default {
     indexTrips,
     getTrip,
@@ -107,4 +123,5 @@ export default {
     addCity,
     updateCity,
     removeCity,
+    reorderCities,
 };

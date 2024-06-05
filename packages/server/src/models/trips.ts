@@ -1,6 +1,7 @@
 export interface City {
     cityName: string;
     numDays: Number;
+    modeOfTransport: string;
 }
 
 export interface Trip {
@@ -8,4 +9,5 @@ export interface Trip {
     tripName: string;
     cities?: City[];
     startDate: Date;
+    departureAirport: string;
 }
