@@ -1,3 +1,4 @@
+import { loadJSON } from "./jsonLoader.js";
 import { prepareTemplate } from "./template.js";
 import { Observer } from "@calpoly/mustang";
 

@@ -20,13 +20,13 @@
         }
     </script>
     <script type="module">
-        import { relayEvent } from "/src/relayEvent.js";
+        import { relayEvent } from "../src/relayEvent.js";
         window.relayEvent = relayEvent;
     </script>
-    <script type="module" src="/src/jsonLoader.js"></script>
-    <script type="module" src="/src/darkMode.js"></script>
-    <script type="module" src="/src/travelerProfileForm.js"></script>
-    <script type="module" src="/src/profileView.js"></script>
+    <script type="module" src="../src/jsonLoader.js"></script>
+    <script type="module" src="../src/darkMode.js"></script>
+    <script type="module" src="../src/travelerProfileForm.js"></script>
+    <script type="module" src="../src/profileView.js"></script>
     <script type="module">
         import { define, Auth } from "@calpoly/mustang";
       
@@ -40,12 +40,12 @@
             <div class="dropdown">
                 <button class="dropbtn"><h1>Menu</h1></button>
                 <div class="dropdown-content">
-                  <a href="index.html">Home</a>
+                  <a href="../index.html">Home</a>
                   <a href="traveler_profile.html">Traveler Profile</a>
-                  <a href="budget_details.html">Budget Details</a>
-                  <a href="destination_details.html">Destination Details</a>
-                  <a href="transportation_method.html">Transportation Method</a>
-                  <a href="login.html">Login</a>
+                  <a href="../budget_details.html">Budget Details</a>
+                  <a href="../destination_details.html">Destination Details</a>
+                  <a href="../transportation_method.html">Transportation Method</a>
+                  <a href="../login.html">Login</a>
                   <a
                     href="#"
                     onclick="relayEvent(event, 'auth:message', ['auth/signout'])">
@@ -55,9 +55,9 @@
             </div>
         </nav>
     </header>
-    <mu-auth provides="blazing:auth" redirect="./login.html">
-    <main>
-        <aside>
+    <mu-auth provides="blazing:auth" redirect="../login.html?next=/profile/traveler_profile.html">
+        <main>
+        <!-- <aside>
             <h2>Traveler Info</h2>
             <p>Name: John Doe</p>
             <p>Age: 30</p>
@@ -77,24 +77,24 @@
                     <li><a href="destination_tokyo.html">Tokyo, Japan</a></li>
                 </ul>
             </section>
-        </article>
-        <aside>
-            <profile-view src="/api/profiles/blaze"></profile-view>
-            <traveler-profile-form src="/api/profiles/blaze">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name">
-            
-                <label for="nickname">Nickname:</label>
-                <input type="text" id="nickname" name="nickname">
-            
-                <label for="home">Home:</label>
-                <input type="text" id="home" name="home">
-            
-                <label for="airports">Airports:</label>
-                <input type="text" id="airports" name="airports">
-            </traveler-profile-form>
-        </aside>
-    </main>
+        </article> -->
+            <aside>
+                <profile-view src="/api/profiles/blaze"></profile-view>
+                <traveler-profile-form src="/api/profiles/blaze">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                
+                    <label for="nickname">Nickname:</label>
+                    <input type="text" id="nickname" name="nickname">
+                
+                    <label for="home">Home:</label>
+                    <input type="text" id="home" name="home">
+                
+                    <label for="airports">Airports:</label>
+                    <input type="text" id="airports" name="airports">
+                </traveler-profile-form>
+            </aside>
+        </main>
     </mu-auth>
     <footer>
         <p>&copy; 2023 Travel Concept Map. All rights reserved.</p>

@@ -29,7 +29,7 @@ export class LoginFormElement extends HTMLElement {
       console.log("Login successful", event.detail, redirect);
 
       relayEvent(event, "auth:message", [
-        "auth/login",
+        "auth/signin",
         { token, redirect }
       ]);
     });

@@ -30,6 +30,7 @@
         window.relayEvent = relayEvent;
     </script>
     <script type="module" src="/src/darkMode.js"></script>
+    <script type="module" src="/src/jsonLoader.js"></script>
 </head>
 <body>
     <header>
@@ -39,16 +40,18 @@
                 <button class="dropbtn"><h1>Menu</h1></button>
                 <div class="dropdown-content">
                   <a href="index.html">Home</a>
-                  <a href="traveler_profile.html">Traveler Profile</a>
+                  <a href="/profile/traveler_profile.html">Traveler Profile</a>
                   <a href="budget_details.html">Budget Details</a>
                   <a href="destination_details.html">Destination Details</a>
                   <a href="transportation_method.html">Transportation Method</a>
                   <a href="login.html">Login</a>
+                  <mu-auth>
                   <a
                     href="#"
                     onclick="relayEvent(event, 'auth:message', ['auth/signout'])">
                     Sign out
                   </a>
+                </mu-auth>
                   <a><input type="checkbox" id="darkModeToggle" autocomplete="off" />Dark Mode</a>
             </div>
         </nav>
@@ -56,7 +59,7 @@
     <main>
         <aside>
           <h2>LogIn</h2>
-          <mu-auth>
+          <mu-auth provides="blazing:auth" redirect="../login.html?next=/profile/traveler_profile.html">
             <main class="card">
               <login-form>
                 <label>
