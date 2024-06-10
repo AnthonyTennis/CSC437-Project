@@ -1,0 +1,20 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx vite",
+    "build": "npx tsc && npx vite build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "vite": "^5.2.12"
+  },
+  "dependencies": {
+    "@calpoly/mustang": "^0.1.13",
+    "lit": "^3.1.4"
+  }
+}

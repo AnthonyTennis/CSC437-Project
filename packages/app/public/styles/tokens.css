@@ -1,0 +1,15 @@
+:root {
+  --background-color: #ffffff;
+  --benday-color: #c7bfbf;
+  --primary-color: #000000;
+  --text-color: #black;
+  --dropdown-hover: #c7bfbf;
+}
+
+body.dark-mode {
+  --background-color: #121212;
+  --benday-color: #2a2a2a;
+  --primary-color: #bb86fc;
+  --text-color: #ffffff;
+  --dropdown-hover: #bb86fc;
+}

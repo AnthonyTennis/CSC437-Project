@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Concept Map</title>
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/dropdown.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="module">
+        import { relayEvent } from "/src/relayEvent.js";
+        window.relayEvent = relayEvent;
+    </script>
+    <script type="module" src="/src/darkMode.js"></script>
+</head>
+<body>
+    <header>
+        <h1><i class="fa fa-compass"></i>Travel Concept Map</h1>
+        <nav>
+            <div class="dropdown">
+                <button class="dropbtn"><h1>Menu</h1></button>
+                <div class="dropdown-content">
+                  <a href="index.html">Home</a>
+                  <a href="/profile/traveler_profile.html">Traveler Profile</a>
+                  <a href="trips.html">Trips</a>
+                  <a href="login.html">Login</a>
+                  <mu-auth>
+                    <a
+                        href="#"
+                        onclick="relayEvent(event, 'auth:message', ['auth/signout'])">
+                        Sign out
+                    </a>
+                  </mu-auth>
+                  <a><input type="checkbox" id="darkModeToggle" autocomplete="off" />Dark Mode</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <section>
+                <h2>Welcome to the Travel Concept Map</h2>
+                <p>Explore various travel concepts and plan your next adventure!</p>
+                <p>Hover over the <u>menu</u> button to start navigating through our website</p>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2023 Travel Concept Map. All rights reserved.</p>
+    </footer>
+</body>
+</html>

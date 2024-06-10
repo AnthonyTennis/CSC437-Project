@@ -1,0 +1,29 @@
+/* Add some spacing around form labels and buttons */
+.form-label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.form-label span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-button {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-button:hover {
+    background-color: #45a049;
+}
+
+.city-form {
+    margin-bottom: 20px;
+}
